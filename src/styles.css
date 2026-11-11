@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  color: #0c0c0c;
+  background: #ffffff;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; }
+
+a { color: inherit; }
+
+.portfolio-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 40%) 1fr;
+  min-height: 100vh;
+}
+
+.profile-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 5.5rem;
+  background: #fff;
+}
+
+.portrait-frame {
+  width: 100%;
+  height: min(42vh, 500px);
+  min-height: 285px;
+  overflow: hidden;
+  background: #d7dce0;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(.9);
+}
+
+.identity {
+  padding: clamp(2.2rem, 5vw, 4.5rem) clamp(2rem, 5.7vw, 5.8rem) 2rem;
+}
+
+.eyebrow, .section-kicker {
+  margin: 0 0 1.6rem;
+  color: #6a6a6a;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.identity h1 {
+  max-width: 480px;
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3rem, 5.2vw, 5.3rem);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: .96;
+}
+
+.pronouns {
+  margin: .45rem 0 2.4rem;
+  font-size: clamp(1.45rem, 2.2vw, 2.15rem);
+  letter-spacing: -.045em;
+}
+
+.role {
+  max-width: 260px;
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.24rem);
+  line-height: 1.45;
+}
+
+.role span { color: #858585; }
+
+.email-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  width: fit-content;
+  margin: auto clamp(2rem, 5.7vw, 5.8rem) 0;
+  padding: 1rem 2.25rem;
+  color: white;
+  background: #0b0b0b;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.email-button:hover { background: #363636; transform: translateY(-2px); }
+
+.about-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: clamp(3rem, 10vw, 9.5rem) clamp(2rem, 10.8vw, 11rem) 3.2rem;
+  background: #b7d7f8;
+}
+
+.about-content { max-width: 680px; }
+
+.about-panel h2 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3rem, 5.6vw, 5.2rem);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.rule {
+  height: 1px;
+  margin: 2rem 0 2rem;
+  background: #111;
+}
+
+.intro {
+  max-width: 580px;
+  font-size: clamp(1.05rem, 1.55vw, 1.32rem);
+  line-height: 1.55;
+}
+
+.intro p { margin: 0 0 1rem; }
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3.6rem;
+}
+
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-width: 210px;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid #222;
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.outline-button:hover { color: #fff; background: #111; transform: translateY(-2px); }
+
+.about-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.about-footer p {
+  margin: 0;
+  color: #2f3d4c;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.social-links { display: flex; align-items: center; gap: .45rem; }
+
+.social-link {
+  display: inline-grid;
+  width: 2.65rem;
+  height: 2.65rem;
+  place-items: center;
+  border: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.social-link:hover { border-color: #111; background: rgba(255,255,255,.2); transform: translateY(-2px); }
+.social-link.is-disabled { cursor: not-allowed; opacity: .35; }
+
+@media (max-width: 850px) {
+  .portfolio-shell { grid-template-columns: 1fr; }
+  .profile-panel, .about-panel { min-height: auto; }
+  .portrait-frame { height: min(68vw, 520px); }
+  .profile-panel { padding-bottom: 3.5rem; }
+  .email-button { margin-top: 1rem; }
+  .about-panel { padding-top: 5rem; }
+}
+
+@media (max-width: 520px) {
+  .identity { padding: 2rem 1.5rem 1.5rem; }
+  .identity h1 { font-size: 3.25rem; }
+  .email-button { width: calc(100% - 3rem); margin-left: 1.5rem; margin-right: 1.5rem; }
+  .about-panel { padding: 4rem 1.5rem 2rem; }
+  .action-row { flex-direction: column; margin-top: 2.5rem; }
+  .outline-button { width: 100%; }
+  .about-footer { align-items: flex-start; flex-direction: column-reverse; margin-top: 4.5rem; }
+}
