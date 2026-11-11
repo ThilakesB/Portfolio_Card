@@ -35,7 +35,11 @@ function ProfilePanel() {
   return (
     <section className="profile-panel" aria-labelledby="profile-name">
       <div className="portrait-frame">
-        <img className="portrait-image" src="/profile.png" alt="Portrait of Thilakeswaran B" />
+        <img
+          className="portrait-image"
+          src={`${import.meta.env.BASE_URL}profile.png`}
+          alt="Portrait of Thilakeswaran B"
+        />
       </div>
       <div className="identity">
         <p className="eyebrow">Portfolio / 2026</p>
@@ -71,7 +75,11 @@ function AboutPanel() {
           </p>
         </div>
         <div className="action-row">
-          <a className="outline-button" href="/Thilakeswaran-B-Resume.pdf" download>
+          <a
+            className="outline-button"
+            href={`${import.meta.env.BASE_URL}Thilakeswaran-B-Resume.pdf`}
+            download
+          >
             Download resume <ArrowUpRight size={17} aria-hidden="true" />
           </a>
           <a className="outline-button" href="https://github.com/ThilakesB" target="_blank" rel="noreferrer">
